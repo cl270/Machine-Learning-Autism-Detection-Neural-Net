@@ -28,5 +28,13 @@ public class neuron {
 		return this.bias;
 	}
 	
-
+	public void addInputDendrite(neuron N) {
+		double w = N.getWeight();
+		double a = N.getOutputAxon();
+		this.inputs.add(w*a);
+	}
+	
+	public double getOutputAxon() {
+		return this.output;
+	}
 }
