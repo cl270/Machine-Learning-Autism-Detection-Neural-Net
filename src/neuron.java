@@ -1,15 +1,15 @@
+import java.util.ArrayList;
 
 public class neuron {
 	private double weight;
 	private double bias;
-	private double[] inputs;
+	private ArrayList inputs;
 	private double output;
 	
 	
-	neuron(double weight, double bias, int inputsize){
+	neuron(double weight, double bias){
 		this.weight = weight;
 		this.bias = bias;
-		this.inputs = new double[inputsize];
 	}
 	
 	public void changeWeight(double input) {
@@ -27,4 +27,6 @@ public class neuron {
 	public double getBias() {
 		return this.bias;
 	}
+	
+
 }
