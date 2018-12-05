@@ -10,4 +10,12 @@ public class neuron {
 	public void changeBias(double input) {
 		this.bias = input;
 	}
+	
+	public double getWeight() {
+		return this.weight;
+	}
+	
+	public double getBias() {
+		return this.bias;
+	}
 }
