@@ -26,12 +26,14 @@ public class neuron {
 	
 	public void inputsComplete() {	 decideOutput();	}
 	
+	//Use this to collect weight and output from previous neurons
 	public void addInputDendrite(neuron N) {
 		double w = N.getWeight();
 		double a = N.getOutputAxon();
 		this.inputs.add(w*a);
 	}
 	
+	//Use this to collate data from all previous neurons, plus the bias present in this neuron
 	private void decideOutput() {
 		for(int i = 0; i<this.inputs.size(); i++) {
 			this.output += inputs.get(i);
