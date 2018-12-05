@@ -4,7 +4,7 @@ import java.util.List;
 public class neuron {
 	private double weight;
 	private double bias;
-	private List<Double> inputs;
+	protected List<Double> inputs;
 	private double output;
 	
 	neuron(double weight, double bias){
@@ -31,6 +31,11 @@ public class neuron {
 		double w = N.getWeight();
 		double a = N.getOutputAxon();
 		this.inputs.add(w*a);
+	}
+	
+	//special case for inputlayer neurons
+	public void addInitialInput(double val) {
+		this.inputs.add(val);
 	}
 	
 	//Use this to collate data from all previous neurons, plus the bias present in this neuron

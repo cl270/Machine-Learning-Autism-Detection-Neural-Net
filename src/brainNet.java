@@ -1,15 +1,29 @@
+import java.util.List;
 
 public class brainNet {
 	
-	private neuron[] inputlayer, layer1, layer2, outputlayer;
+	private List<neuron> inputlayer, layer1, outputlayer;
 	dataReader rd;
 	
 	brainNet(String file){
 		initialize();
-		rd = new dataReader(file);
+		this.rd = new dataReader(file);
+		this.rd.skipFluff();
 	}
 	
-	private static void initialize() {
+	private void initialize() {
+		String[] s = rd.getCurrentLineData();
 		
+		for(int i = 0; i< 10; i++) {
+			neuron n = new neuron(1,1);
+			n.addInitialInput(Double.parseDouble(s[i]));
+			inputlayer.add(n);
+		}
+		
+		for(int i = 0; i< 10; i++) {
+			neuron n = new neuron(1,1);
+			n.addInitialInput(Double.parseDouble(s[i]));
+			inputlayer.add(n);
+		}
 	}
 }

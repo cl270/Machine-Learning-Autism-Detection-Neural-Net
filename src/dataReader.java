@@ -16,10 +16,9 @@ public class dataReader {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		skipFluff();
 	}
 	
-	private void skipFluff() {
+	public void skipFluff() {
 		while(this.currentLine.trim().isEmpty() || this.currentLine.charAt(0) == '@' ) {
 			this.currentLine = this.s.nextLine();
 		}
